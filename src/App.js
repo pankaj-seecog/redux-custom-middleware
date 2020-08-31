@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 const App = (props) => {
   return (
     <div>
-      <h1>Runs : {props.pRuns}</h1>
+      <h1>Runs Again : {props.pRuns}</h1>
       <p>
       <button onClick={props.pFour}>Four Runs</button>
       </p>
