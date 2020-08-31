@@ -5,19 +5,17 @@ import App from "./App";
 import cricketReducer from "./store/cricket.reducer";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-
+import thunk from 'redux-thunk';
 //custom middleware start
 let myMiddleware = () => {
-  console.log("Inside middleware");
+  console.log("Inside custom middleware");
   return  next => action => {
-    console.log("Inside middleware");
-    console.log("Action type is ", action.type);
     return next(action);
   };
 };
 //custom middleware end
 
-let store = createStore(cricketReducer, applyMiddleware(myMiddleware));
+let store = createStore(cricketReducer, applyMiddleware(myMiddleware,thunk));
 
 ReactDOM.render(
   <Provider store={store}>
